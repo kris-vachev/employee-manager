@@ -1,0 +1,5 @@
+Required dependencies:
+	- .NET 6 (https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.411-windows-x64-installer)
+	- Node JS v18.16.1 (https://nodejs.org/dist/v18.16.1/node-v18.16.1-x64.msi)
+	- Angular v16.1.2 (npm install -g @angular/cli in CMD after installation of Node JS)
+	- SSMS (https://aka.ms/ssmsfullsetup)

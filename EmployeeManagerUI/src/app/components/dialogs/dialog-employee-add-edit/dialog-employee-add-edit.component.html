@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>{{action}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="employeeForm">
+        <mat-grid-list cols="1" rowHeight="80px">
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput autocomplete="off" formControlName="employeeName">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Department</mat-label>
+                    <mat-select formControlName="departmentId">
+                        <mat-option *ngFor="let item of departmentList" [value]="item.departmentId">
+                            {{item.departmentName}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Salary</mat-label>
+                    <input type="number" min="1" matInput autocomplete="off" formControlName="salary">
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field appearance="outline">
+                    <mat-label>Date Joined</mat-label>
+                    <input matInput [matDatepicker]="picker" autocomplete="off" formControlName="dateJoined">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </mat-grid-tile>
+
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" [disabled]="employeeForm.invalid" (click)="addEditEmployee()">{{actionButton}}</button>
+    <button mat-raised-button mat-dialog-close color="warn">Cancel</button>
+</mat-dialog-actions>

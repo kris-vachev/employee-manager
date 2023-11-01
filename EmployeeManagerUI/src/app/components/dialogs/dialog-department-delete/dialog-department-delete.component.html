@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Delete Department</h1>
+<div mat-dialog-content>
+    Do you want to delete <strong>{{departmentDelete.departmentName}}</strong>?<br>
+    This will also <strong>delete</strong> any employees associated with the department!
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" cdkFocusInitial (click)="confirmDelete()">Yes</button>
+    <button mat-raised-button mat-dialog-close>No</button>
+</div>

@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="navbar">
+    <div>Employee Manager</div>
+    <div class="logged-user" *ngIf="isLoggedIn">{{user?.userName}}</div>
+    <div *ngIf="isLoggedIn">
+        <a routerLink="employees" routerLinkActive="mat-accent">Employees</a>
+        <a routerLink="departments" routerLinkActive="mat-accent" *ngIf="user?.role?.roleName=='Administrator'">Departments</a>
+        <span>
+            <button mat-raised-button color="warn" (click)="logout()" *ngIf="isLoggedIn">Logout</button>
+        </span>
+    </div>
+</mat-toolbar>

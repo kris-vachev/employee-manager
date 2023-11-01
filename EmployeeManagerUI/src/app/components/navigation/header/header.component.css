@@ -1,0 +1,19 @@
+.navbar{
+    justify-content: space-between;
+}
+
+a{
+    padding-right: 1rem;
+    color: rgb(215, 169, 226);
+    text-decoration: none;
+}
+
+.mat-accent{
+    color: white;
+}
+
+@media only screen and (max-width: 870px) {
+    .logged-user{
+        display: none;
+    }
+}
